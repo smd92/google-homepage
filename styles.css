@@ -1,0 +1,190 @@
+/* CSS-Reset, damit keine Scrollbar kommt bei width: 100%; */
+
+html, body{
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* navbar wird zu grid-container
+Für jeden Header-Menüpunkt wird eine Spalte von 50px angelegt. Für den leeren
+Bereich wird eine Spalte mit 1fr angelegt. 1fr berechnet automatisch den Abstand
+zwischen "Store" und "Gmail".
+Dann werden Areas definiert ("." für leere Zelle/Area) */
+
+#navbar {                                                               
+    display: grid;                                                         
+    grid-template-columns: 50px 50px 1fr 50px 50px 50px 110px;
+    grid-template-rows: 80px;                                                 
+    grid-template-areas:                                                      
+    "about store . gmail images menu sign-in";
+    color: #000;
+}
+
+/* hier wird jeder Header-Menüpunkt/jedes Element seiner Zelle im Grid zugewiesen
+    und horizontal + vertikal zentriert */
+
+#about {
+    grid-area: about;
+    justify-self: center;
+    align-self: center;
+    margin-left: 1em;
+}
+
+#store {
+    grid-area: store;
+    justify-self: center;
+    align-self: center;
+}
+
+#gmail {
+    grid-area: gmail;
+    justify-self: center;
+    align-self: center;
+}
+
+#images {
+    grid-area: images;
+    justify-self: center;
+    align-self: center;
+}
+
+#menu {
+    grid-area: menu;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Hier wird der Sign-In Button/Link gestylt */
+
+#sign-in {
+    grid-area: sign-in;
+    justify-self: center;
+    align-self: center;
+    margin-right: 1em;
+    color: #f2f2f2;
+    font-weight: bold;
+    line-height: 12px;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    border-radius: 2px;
+    outline: none;
+    background: #4285f4;
+}
+
+#sign-in:hover {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    font-family: Arial, sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hier wird der main-Bereich ausgerichtet */
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px 70px 40px;
+    grid-template-areas: 
+    ". logo ."
+    ". searchbar ."
+    ". search-buttons .";
+}
+
+#logo {
+    grid-area: logo;
+    justify-self: center;
+    align-self: end;
+}
+
+#searchbar {
+    width: 550px;
+    height: 40px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: rgb(218, 214, 214);
+    grid-area: searchbar;
+    justify-self: center;
+    align-self: center;
+}
+
+#searchbar:hover {
+    border-style: outset;
+    border-width: 0.1em;
+    border-color: rgb(218, 214, 214);
+}
+
+#searchbar:focus {
+    outline: none;
+}
+
+/* search-buttons werden zu flex-container, um sie nebeneinander im grid darstellen zu können */
+
+#search-buttons {
+    display: flex;
+    flex-direction: row;
+    grid-area: search-buttons;
+    justify-self: center;
+    align-self: center;
+    -webkit-appearance: none;
+}
+
+#search-btn {
+    margin-right: 10px;
+}
+
+#search-btn, #random-btn {
+    line-height: 30px;
+    padding: 3px 15px 3px 15px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    opacity: 0.75;
+    margin-top: 20px;
+}
+
+#search-btn:hover, #random-btn:hover {
+    border: solid;
+    border-color: darkgray;
+    border-width: 1px;
+    color: black;
+    opacity: 1;
+}
+
+/* Hier werden der footer und seine Elemente ausgerichtet */
+
+#footer {
+    min-width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f2f2f2;
+    line-height: 40px;
+    font-size: 14px;
+    color: #000;
+    opacity: 0.75;
+}
+
+
+#privacy, #terms, #settings {
+    float: right;
+    margin: 1em;
+}
+
+#advertising, #business, #howsearch {
+    float: left;
+    margin: 1em;
+}
