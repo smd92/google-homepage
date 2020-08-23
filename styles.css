@@ -1,4 +1,4 @@
-/* CSS-Reset, damit keine Scrollbar kommt bei width: 100%; */
+/* reset */
 
 html, body{
     margin: 0;
@@ -9,11 +9,7 @@ body {
     font-size: 13px;
 }
 
-/* navbar wird zu grid-container
-Für jeden Header-Menüpunkt wird eine Spalte von 50px angelegt. Für den leeren
-Bereich wird eine Spalte mit 1fr angelegt. 1fr berechnet automatisch den Abstand
-zwischen "Store" und "Gmail".
-Dann werden Areas definiert ("." für leere Zelle/Area) */
+/* navbar section */
 
 #navbar {                                                               
     display: grid;                                                         
@@ -24,8 +20,7 @@ Dann werden Areas definiert ("." für leere Zelle/Area) */
     color: #000;
 }
 
-/* hier wird jeder Header-Menüpunkt/jedes Element seiner Zelle im Grid zugewiesen
-    und horizontal + vertikal zentriert */
+/* header section */
 
 #about {
     grid-area: about;
@@ -58,8 +53,6 @@ Dann werden Areas definiert ("." für leere Zelle/Area) */
     align-self: center;
 }
 
-/* Hier wird der Sign-In Button/Link gestylt */
-
 #sign-in {
     grid-area: sign-in;
     justify-self: center;
@@ -89,7 +82,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Hier wird der main-Bereich ausgerichtet */
+/* main section */
 
 #main {
     display: grid;
@@ -129,7 +122,7 @@ a:hover {
     outline: none;
 }
 
-/* search-buttons werden zu flex-container, um sie nebeneinander im grid darstellen zu können */
+/* search buttons become flex for inline display in grid */
 
 #search-buttons {
     display: flex;
@@ -163,7 +156,7 @@ a:hover {
     opacity: 1;
 }
 
-/* Hier werden der footer und seine Elemente ausgerichtet */
+/* footer section */
 
 #footer {
     min-width: 100%;
